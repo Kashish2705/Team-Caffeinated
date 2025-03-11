@@ -6,9 +6,12 @@ generated content, off-topic answers, copy-pasted content, and inappropriate lan
 review process where human reviewers have to read through thousands of responses to ensure data quality.
 
 ## 1. Overview
+A standardized pre-processing procedure was followed before implementing core functionalities to assess data quality.
+For the given training dataset , questions Q16A and Q16B were given the most priority while checking for quality of response since they actively required user to respond .
 
 
 ## Installation & Setup
+The models used are lightweight and don't carry computational overhead. The entire code can be run on a standard PC with high computing capabilities.
 
 1. **Clone the Repository**
    ```bash
@@ -44,20 +47,17 @@ review process where human reviewers have to read through thousands of responses
 
 
 
-## 3. Core tasks 
-| S.No | Task                                    | Model / Library                  | Method |
+## 3. Core tasks (in addition to pre-processing
+| S.No | Task                                    | Model / Method                  | Description|
 |:-----:|:----------------------------------------|:----------------------------------|:--------|
 | 1.    | Response Relevance to Question         | all-MiniLM-L6-v2 (lightweight)   | Create embeddings, used cosine similarity: Bi-encoder - used for text matching (match query and response) + normalized to get threshold (it is median value) |
-| 2.    | Boost Keywords                         | LDA (Topic Modelling)            | Helps discover hidden topics; Increase relevance score if certain keywords are present (Hardcoded as of now) - 1 if > threshold = true else false |
-| 3.    | Excluding 18th Question                | SVM Classifier                   | Random state = 42, random shuffling |
-| 4.    | Jaccard Similarity                     | -                                | ∣A ∪ B∣ / ∣A ∩ B∣ (Because short responses and only one-line responses) |
-| 5.    | Repetition of Responses                | -                                | Flagged if response is duplicated |
-| 6.    | Detect AI-generated Responses          | -                                | One spacebar (used in ChatGPT) + punctuation marks exist |
-| 7.    | AI-generated Response Detection        | -                                | Responses too short to conclude anything; Looked for proper spacing and punctuation, as context cannot play a role here clearly |
+| 2.    | Relevance to survey theme (boost keywords)                     | LDA (Topic Modelling)            | A list created to add key words that discover hidden topics; Increase relevance score of response if certain keywords are present  1 if > threshold = true else false |
+| 3.    |        Repetitive/Contradictory responses per user            |                       Jaccard Similarity          | ∣A ∪ B∣ / ∣A ∩ B∣ (Because short responses and only one-line responses , thus better output) |
+| 4.    | Detect AI-generated Responses          | Custom function (Responses too short , context has no role ) | One spacebar (used in ChatGPT) or consistent spacing + existence of punctuation marks |
+
 
 
 ## 5. Model training
 
-## 6. Demo
 
-## 7. Validation Results
+## 6. Validation Results

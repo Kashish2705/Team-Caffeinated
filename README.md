@@ -11,7 +11,7 @@ For the given training dataset , questions Q16A and Q16B were given the most pri
 
 
 ## Installation & Setup
-The models used are lightweight and don't carry computational overhead. The entire code can be run on a standard PC with high computing capabilities.
+The models used are lightweight and don't carry computational overhead. The entire code can be run on a standard PC without high computing capabilities.
 
 1. **Clone the Repository**
    ```bash
@@ -61,3 +61,16 @@ The models used are lightweight and don't carry computational overhead. The enti
 
 
 ## 6. Validation Results
+- Accuracy :0.84
+
+ -  Precision :0.93 for '0'
+ -  Precision  :0.19 for'1'
+
+-  Recall : 0.90 for '0'
+-  Recall : 0.25 for '1'
+
+-  F1-score :0.91 for
+- F1- score :0.22 for'1'
+
+  Class imbalance exists in the dataset which impacts the performance metrics . There are more quality responses than flagged responses in the training dataset.
+

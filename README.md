@@ -45,9 +45,13 @@ The models used are lightweight and don't carry computational overhead. The enti
 - Use the Flask API for making predictions
 - Modify `utils/` scripts to adapt the project as needed.
 
+## 2. Pre-processing
+1. Identify empty fields and replace with null
+2. Replace all synonymns of null with 'na' for standardization
+3. Remove stopwords
+4. Lemmatization
 
-
-## 3. Core tasks (in addition to pre-processing
+## 3. Core tasks (in addition to pre-processing)
 | S.No | Task                                    | Model / Method                  | Description|
 |:-----:|:----------------------------------------|:----------------------------------|:--------|
 | 1.    | Response Relevance to Question         | all-MiniLM-L6-v2 (lightweight)   | Create embeddings, used cosine similarity: Bi-encoder - used for text matching (match query and response) + normalized to get threshold (it is median value) |
@@ -57,10 +61,10 @@ The models used are lightweight and don't carry computational overhead. The enti
 
 
 
-## 5. Model training
+## 4. Model training
 
 
-## 6. Validation Results
+## 5. Validation Results
 - Accuracy :0.84
 
  -  Precision :0.93 for '0'

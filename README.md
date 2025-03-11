@@ -8,7 +8,39 @@ review process where human reviewers have to read through thousands of responses
 ## 1. Overview
 
 
-## 2. Setup
+## Installation & Setup
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/Kashish2705/Team-Caffeinated.git
+   cd Team-Caffeinated
+   ```
+
+2. **Create a Virtual Environment** (Optional but recommended)
+   ```bash
+   pip install pipenv
+   pipenv install
+   ```
+
+3. **Install Dependencies**
+   Using `pip`:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Set Up Environment Variables**
+   Create a `.env` file in the root directory and add any required environment variables.
+
+5. **Run the Flask Application**
+   ```bash
+   python app.py
+   ```
+   The app should now be running at `http://127.0.0.1:5000/`.
+
+## Usage
+- Open the `index.html` file in your browser.
+- Use the Flask API for making predictions
+- Modify `utils/` scripts to adapt the project as needed.
 
 
 

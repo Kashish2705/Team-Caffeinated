@@ -63,6 +63,13 @@ The models used are lightweight and don't carry computational overhead. The enti
 
 ## 4. Model training
 
+Handle Class Imbalance (SMOTETomek)
+- Apply SMOTE (Synthetic Minority Over-sampling Technique) to generate synthetic samples for the minority class.
+- Use Tomek Links to remove noisy samples from the majority class, improving the decision boundary.
+  
+Train Decision Tree Classifier
+- Use Gini impurity as the splitting criterion.
+- Fit the model on the resampled training data.
 
 ## 5. Validation Results
 - Accuracy :0.84
